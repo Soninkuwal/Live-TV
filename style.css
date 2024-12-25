@@ -1,31 +1,192 @@
-body{
-    background-color: hsl(203, 4%, 65%) ;
-}
-.hover {
-    display: block;
-    cursor: pointer;
-    background-color: hsl(0, 0%, 20%); 
-    color: white;
-    padding: 10px ; 
-    border-radius:5px;
-    width: 85%;
-    margin: auto;
-    margin-bottom: 15px;
+ @import url(https://fonts.googleapis.com/css2?family=Montserrat&display=swap);
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: auto;
+            padding: auto;
+            background-color: #f1f1f1;
+            color: red;
+        }
+        .header-container {
+            display: flex;
+            align-items: center;
+            font-family: Gloock, serif;
+            font-weight: 700;
+            font-size: 12px;
+            color: #333;
+            text-align: centre;
+            border: 3px solid green;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            text-shadow: 5px 3px 4px rgba(0, 0, 0, .3);
+            background-color: pink;
+            padding: 7px 20px;
+            border-radius: 40px 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+        }
+        .toggle-wrapper {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+        .file-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            padding: auto;
+        }
+        
+        .directory-item, .file-item {
+            max-width: auto;
+            height: auto;
+            margin: auto;
+            text-align: centre;
+            border-radius: 40px 10px;
+            border: 3px solid gold;
+            overflow: hidden;
+            transition: transform .3s ease, box-shadow .3s ease;
+            background-color: #fff;
+            padding: 7px;
+        }
+        .directory-item img, .file-item img {
+            max-width: 70px;
+            border-radius: 10px 40px;
+            border: 3px solid yellow;
+            background-color: pink;
+            
+            height: auto;
+            display: block;
+            margin: 10px auto;
+            transition: transform .3s ease;
+        }
+        .directory-item a, .file-item a {
+            text-decoration: none;
+            color: #00bfff;
+            max-width: 100px;
+            height: auto;
+            font-weight: 700;
+            display: block;
+            margin-top: auto;
+            transition: color .3s ease;
+        }
+        .directory-item:hover, .file-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        }
+        .directory-item img:hover, .file-item img:hover {
+            transform: scale(1.1);
+        }
+        .directory-item a:hover, .file-item a:hover {
+            color: #007bff;
+        }
+        h1 {
+            text-align: center;
+            color: red;
+            margin-bottom: 1px;
+        }
+        .group-filter {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .group-filter select, .search-bar input {
+            padding: 10px 20px;
+            font-size: 15px;
+            border-radius: 50px 20px;
+            border: 3px solid red;
+            background-color: #fff;
+            color: green;
+        }
+        .search-bar {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .dark-mode {
+            background-color: pink;
+            color: red;
+        }
+        .dark-mode .header-container {
+            background-color: #111;
+            color: yellow;
+        }
+        .dark-mode .directory-item {
+            background-color: #222;
+            color: #fff;
+        }
+        .dark-mode .directory-item a {
+            color: red;
+        }
+        .dark-mode .directory-item a:hover {
+            color: #fff;
+        }
+        .dark-mode .group-filter select, .dark-mode .search-bar input {
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #555;
+        }
+        
+           /* Slide Bar */
+    .slide-bar-top {
+      background-color: Navy;
+      white: auto;
+      height: auto;
+      color: Lime;
+      padding: auto;
+      font-size: 20px;
+      border-radius: 10px 30px;
+      border: 3px solid Yellow;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .slide-bar-bottom {
+      background-color: yellow;
+      white: auto;
+      height: auto;
+      color: red;
+      padding: auto;
+      font-size: 20px;
+      border-radius: 30px 10px;
+      border: 3px solid green;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      position: relative;
+    }
 
-  } 
-  
-  .hover a{
-    color: white;
-  }
+    .slide-bar-text {
+      display: inline-block;
+      animation: slide 20s linear infinite;
+    }
 
-  .hover a:hover{
-    color: black;
-  }
-  .hover:hover {
-    background-color: yellow;
-    color: black;
-	border: 2px solid green;
-	box-shadow: 3px 6px white;
-	border-top-color: white;
-  }
-  
+    @keyframes slide {
+      100% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    
+         /* telegram icons */
+        .telegram-toggle { 
+            position: fixed; 
+            top: 20px; 
+            right: 20px; 
+            background-color: #0088cc; 
+            color: #fff; 
+            padding: 10px 15px; 
+            border-radius: 50px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            display: flex; 
+            align-items: center; 
+            z-index: 1001;
+        }
+        .telegram-toggle img { 
+            width: 400px; 
+            height: 50px; 
+            align: center;
+            margin-right: 20px; 
+        }
