@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JW Player Example</title>
+    <script src="https://cdn.jwplayer.com/libraries/KB5zFt7A.js"></script>
+    <style>
+        .watermark {
+            position: absolute;
+            top: 10px; /* Adjusted for better visibility */
+            right: 10px;
+            font-size: 15px;
+            color: gold;
+            z-index: 20; /* Ensure it's above controls */
+            opacity: 0; /* Start hidden for animation */
+            animation: fadeInOut 4s ease-in-out infinite;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            25% { opacity: 1; }
+            75% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        /* Center-aligned controls */
+        .jw-controlbar {
+            justify-content: center;
+        }
+
+        /* Portrait mode adjustments */
+        @media (orientation: portrait) {
+            .watermark {
+                font-size: 12px; /* Smaller font size in portrait */
+            }
+            .jw-controlbar {
+                bottom: 5%; /* Adjust position in portrait */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="player"></div>
+    <div class="watermark">@SONICKUWALSSCBOT</div>
+
+    <script>
+        jwplayer("player").setup({
+            playlist: [{
+                title: "Willo Sport Match",
+                description: "Willo Sport Match",
+                image: "TV/PHOTO/Willo Sport .jpeg",
+                sources: [
+                    { file: "https://amg01269-amg01269c1-willowtv-us-5479.playouts.now.amagi.tv/playlist/amg01269-willowtvfast-willowplus-willowtvus/playlist.m3u8", label: "Auto" }, // Example m3u8 (Auto quality)
+                    { file: "https://example.com/video_high.m3u8", label: "720p HD" },
+                    { file: "https://example.com/video_mid.m3u8", label: "480p" },
+                    { file: "https://example.com/video_low.m3u8", label: "360p" },
+                    { file: "https://example.com/your-video.mpd", label: "DASH" },
+                    { file: "https://example.com/your-video.mkv", label: "MKV" },
+                    { file: "https://example.com/your-audio.m4a", label: "Audio" },
+                    { file: "https://www.youtube.com/watch?v=YOUR_YOUTUBE_VIDEO_ID", label: "YouTube" }
+                ],
+                tracks: [
+                    { file: "https://example.com/subtitles_en.vtt", label: "English", kind: "captions", "default": true },
+                    { file: "https://example.com/subtitles_es.vtt", label: "Spanish", kind: "captions" },
+                    { file: "https://example.com/audio_english.m4a", label: "English", kind: "audio" },
+                    { file: "https://example.com/audio_spanish.m4a", label: "Español", kind: "audio" }
+                ],
+                // Titles for different orientations
+                mediaMetadata: {
+                    portraitTitle: "Sport Match - Quick Highlights",
+                    landscapeTitle: "Sport Match - Extended Highlights"
+                }
+            }],
+            primary: "html5",
+            playbackRates: [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.50, 3, 3.5, 4],
+            advertising: {
+                client: "vast",
+                tag: "https://example.com/your_vast_tag.xml" // Replace with your VAST tag
+            },
+            skin: {
+                name: "stormtrooper" // Or choose another skin
+            },
+            width: "100%",
+            aspectratio: "16:9",
+            autostart: false,
+            controls: true,
+            displaytitle: true,
+            stretching: "uniform", // Maintain aspect ratio
+
+            // Events for handling orientation and UI updates
+            events: {
+                onReady: function() {
+                    updateDisplayForOrientation();
+                    setupOrientationChangeListener();
+                },
+                onFullscreen: function(data) {
+                    // Delay updating the display in fullscreen
+                    setTimeout(() => {
+                        updateDisplayForOrientation(data.fullscreen ? 'landscape' : 'portrait');
+                    }, 500); // Adjust delay as needed
+                },
+                onError: function(error) {
+                    console.error("JW Player Error:", error);
+                }
+            }
+        });
+
+        // Function to update title and other elements based on orientation
+        function updateDisplayForOrientation(mode = null) {
+            const playerInstance = jwplayer("player");
+            const media = playerInstance.getPlaylistItem();
+
+            if (!mode) {
+                mode = (window.innerWidth > window.innerHeight) ? 'landscape' : 'portrait';
+            }
+
+            if (media && media.mediaMetadata) {
+                playerInstance.setWindowTitle(mode === 'portrait' ? media.mediaMetadata.portraitTitle : media.mediaMetadata.landscapeTitle);
+            }
+        }
+
+        // Setup listener for orientation changes
+        function setupOrientationChangeListener() {
+            window.addEventListener("orientationchange", function() {
+                updateDisplayForOrientation();
+            });
+        }
+    </script>
+
+    <!-- Ad Script (Keep this at the end of the body) -->
+    <script async="async" data-cfasync="false" src="//pl25740301.profitablecpmrate.com/602d8f8994abb080b1f77d107a83267d/invoke.js"></script>
+    <div id="container-602d8f8994abb080b1f77d107a83267d"></div>
+</body>
+  </html>
