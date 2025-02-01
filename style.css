@@ -1,31 +1,136 @@
-body{
-    background-color: hsl(203, 4%, 65%) ;
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
 }
-.hover {
-    display: block;
-    cursor: pointer;
-    background-color: hsl(0, 0%, 20%); 
-    color: white;
-    padding: 10px ; 
-    border-radius:5px;
-    width: 85%;
-    margin: auto;
-    margin-bottom: 15px;
 
-  } 
-  
-  .hover a{
-    color: white;
-  }
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
 
-  .hover a:hover{
-    color: black;
-  }
-  .hover:hover {
-    background-color: yellow;
-    color: black;
-	border: 2px solid green;
-	box-shadow: 3px 6px white;
-	border-top-color: white;
-  }
-  
+.search-bar {
+    margin-top: 10px;
+}
+
+.search-bar input,
+.search-bar select {
+   padding: 8px;
+   margin-left: 5px;
+   border: 1px solid #ddd;
+   border-radius: 4px;
+}
+
+/* Top Channels Slider */
+.top-channels-slider {
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.top-channels-slider h2 {
+    margin-bottom: 10px;
+}
+.slider-container {
+    overflow-x: auto;
+    white-space: nowrap; /* Prevent wrapping */
+    padding: 10px 0;
+}
+.slider-track {
+    display: inline-flex;
+    gap: 15px; /* spacing between slider items */
+}
+.slider-channel-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    display: inline-block; /* Make items side-by-side*/
+    width: 100px;
+    flex-shrink: 0; /* Do not shrink these items */
+    transition: transform 0.3s ease;
+}
+.slider-channel-item:hover {
+  transform: scale(1.05);
+}
+
+
+.slider-channel-item img {
+    max-width: 60px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+.slider-channel-item i {
+    margin-left: 3px;
+    font-size: 0.8em;
+}
+
+.slider-channel-item a {
+  text-decoration: none;
+  color: inherit; /* Inherit color from the container */
+}
+/* Live Animation */
+.slider-channel-item .fa-circle {
+  animation: pulse-live 1.5s infinite;
+}
+@keyframes pulse-live {
+    0% { color: red; }
+    50% { color: #8B0000; }
+    100% { color: red; }
+}
+
+
+/* Record Animation */
+.slider-channel-item .fa-record-vinyl {
+ animation: spin-record 2s linear infinite;
+}
+@keyframes spin-record {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+/* Channel List */
+.channel-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.channel-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+.channel-item:hover {
+    transform: scale(1.05);
+}
+
+.channel-item img {
+    max-width: 80px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.channel-item h3 {
+    margin-bottom: 5px;
+}
+
+.channel-item a {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #5cb85c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 5px;
+	}
