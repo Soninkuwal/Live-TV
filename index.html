@@ -69,7 +69,7 @@
     function generateSliderChannelHTML(channel) {
       return `
       <div class="slider-channel-item">
-          <a href="${channel.url}" target="_blank">
+          <a href="${channel.url}" rel="nofollow">
             <img src="${channel.imageUrl}" alt="${channel.name} Icon">
               <p>${channel.name}</p>
               ${channel.isLive ? '<i class="fas fa-circle"></i>' : '<i class="fas fa-record-vinyl"></i>'}
