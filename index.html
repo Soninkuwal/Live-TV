@@ -1,308 +1,125 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <title>SONIC KUWAL TV</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="https://drmlive.in/sliv.png" type="image/x-icon">
-    <link rel="icon" href="https://drmlive.in/sliv.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://ipl-2023-schedule.pages.dev/jtv.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
-    <style>
-        @import url(https://fonts.googleapis.com/css2?family=Montserrat&display=swap);
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            margin: auto;
-            padding: auto;
-            background-color: #f1f1f1;
-            color: red;
-        }
-        .header-container {
-            display: flex;
-            align-items: center;
-            font-family: Gloock, serif;
-            font-weight: 700;
-            font-size: 12px;
-            color: #333;
-            text-align: centre;
-            border: 3px solid green;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-            margin-top: 10px;
-            text-shadow: 5px 3px 4px rgba(0, 0, 0, .3);
-            background-color: pink;
-            padding: 7px 20px;
-            border-radius: 40px 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
-        }
-        .toggle-wrapper {
-            margin-left: auto;
-            display: flex;
-            align-items: center;
-        }
-        .file-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            padding: auto;
-        }
-        
-        .directory-item, .file-item {
-            max-width: auto;
-            height: auto;
-            margin: auto;
-            text-align: centre;
-            border-radius: 40px 10px;
-            border: 3px solid gold;
-            overflow: hidden;
-            transition: transform .3s ease, box-shadow .3s ease;
-            background-color: #fff;
-            padding: 7px;
-        }
-        .directory-item img, .file-item img {
-            max-width: 70px;
-            border-radius: 10px 40px;
-            border: 3px solid yellow;
-            background-color: pink;
-            
-            height: auto;
-            display: block;
-            margin: 10px auto;
-            transition: transform .3s ease;
-        }
-        .directory-item a, .file-item a {
-            text-decoration: none;
-            color: #00bfff;
-            max-width: 100px;
-            height: auto;
-            font-weight: 700;
-            display: block;
-            margin-top: auto;
-            transition: color .3s ease;
-        }
-        .directory-item:hover, .file-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 10px rgba(0, 0, 0, .3);
-        }
-        .directory-item img:hover, .file-item img:hover {
-            transform: scale(1.1);
-        }
-        .directory-item a:hover, .file-item a:hover {
-            color: #007bff;
-        }
-        h1 {
-            text-align: center;
-            color: red;
-            margin-bottom: 1px;
-        }
-        .group-filter {
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        .group-filter select, .search-bar input {
-            padding: 10px 20px;
-            font-size: 15px;
-            border-radius: 50px 20px;
-            border: 3px solid red;
-            background-color: #fff;
-            color: green;
-        }
-        .search-bar {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .dark-mode {
-            background-color: pink;
-            color: red;
-        }
-        .dark-mode .header-container {
-            background-color: #111;
-            color: yellow;
-        }
-        .dark-mode .directory-item {
-            background-color: #222;
-            color: #fff;
-        }
-        .dark-mode .directory-item a {
-            color: red;
-        }
-        .dark-mode .directory-item a:hover {
-            color: #fff;
-        }
-        .dark-mode .group-filter select, .dark-mode .search-bar input {
-            background-color: #333;
-            color: #fff;
-            border: 1px solid #555;
-        }
-        
-           /* Slide Bar */
-    .slide-bar-top {
-      background-color: Navy;
-      white: auto;
-      height: auto;
-      color: Lime;
-      padding: auto;
-      font-size: 20px;
-      border-radius: 10px 30px;
-      border: 3px solid Yellow;
-      margin-bottom: 10px;
-      margin-top: 10px;
-      white-space: nowrap;
-      overflow: hidden;
-      position: relative;
-    }
-    
-    .slide-bar-bottom {
-      background-color: yellow;
-      white: auto;
-      height: auto;
-      color: red;
-      padding: auto;
-      font-size: 20px;
-      border-radius: 30px 10px;
-      border: 3px solid green;
-      margin-bottom: 10px;
-      margin-top: 10px;
-      white-space: nowrap;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .slide-bar-text {
-      display: inline-block;
-      animation: slide 20s linear infinite;
-    }
-
-    @keyframes slide {
-      100% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-    
-         /* telegram icons */
-        .telegram-toggle { 
-            position: fixed; 
-            top: 20px; 
-            right: 20px; 
-            background-color: #0088cc; 
-            color: #fff; 
-            padding: 10px 15px; 
-            border-radius: 50px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            display: flex; 
-            align-items: center; 
-            z-index: 1001;
-        }
-        .telegram-toggle img { 
-            width: 400px; 
-            height: 50px; 
-            align: center;
-            margin-right: 20px; 
-        }
-    </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Channel Repository</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <!-- telegram link in body tag -->
-    <!-- <a href="https://t.me/Sonickuwalupdate" class="telegram-toggle">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg"></a> -->
-    
-    <div style="position: fixed; top: 50%; right: 10px; z-index: 9999; display: flex; flex-direction: column; align-items: center;">
-  <a href="https://t.me/SONICKUWALUPDATEKANHA" target="_blank" style="margin: 5px;">
-    <img src="https://img.icons8.com/?size=100&amp;id=5mIvDYZUWDCF&amp;format=png&amp;color=000000" alt="Telegram" style="width: 40px; height: 40px;" />
-  </a>
-  <a href="https://youtube.com/@sonickuwal?si=r-qOBYHjHp6DKJ5P" target="_blank" style="margin: 5px;">
-    <img src="https://img.icons8.com/?size=100&amp;id=19318&amp;format=png&amp;color=000000" alt="YouTube" style="width: 40px; height: 40px;" />
-    </a>
-      <a href="https://t.me/SONICKUWALMOVIESWEBSERIES" target="_blank" style="margin: 5px;">
-    <img src="https://img.icons8.com/?size=100&amp;id=5mIvDYZUWDCF&amp;format=png&amp;color=000000" alt="Telegram" style="width: 40px; height: 40px;" />
-  </a>
-<!--
-  <a href="https://facebook.com/yourpage" target="_blank" style="margin: 5px;">
-    <img src="https://img.icons8.com/?size=100&id=118497&format=png&color=000000" alt="Facebook" style="width: 40px; height: 40px;">
-  </a>
-  <a href="https://instagram.com/yourprofile" target="_blank" style="margin: 5px;">
-    <img src="https://img.icons8.com/?size=100&id=32323&format=png&color=000000" alt="Instagram" style="width: 40px; height: 40px;">
-  </a> -->
-</div>
-   
-     <!-- Top Slide Bar -->
-  <div class="slide-bar-top">
-    <div class="slide-bar-text">
-      🔥 Welcome to sonic kuwal TV Channel List! Explore channels by category, search for name the channel || least update for tv channel list join telegram channel :- @SONICKUWALUPDATEKANHA 
-    </div>
-  </div> 
-  
-    <div class="header-container">
-        <h1 id="title">SONIC KUWAL TV</h1>
-        <div class="toggle-wrapper">
-            <input type="checkbox" class="checkbox" id="checkbox">
-            <label for="checkbox" class="checkbox-label">
-                <i class="fas fa-moon"></i>
-                <i class="fas fa-sun"></i>
-                <span class="ball"></span>
-            </label>
+
+    <header>
+        <h1>TV Channel Repository</h1>
+        <div class="search-bar">
+            <input type="text" id="channelSearch" placeholder="Search by ID or Name...">
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+                <option value="sports">Sports</option>
+                <option value="live_tv">Live TV</option>
+                <option value="news">News</option>
+            </select>
+        </div>
+    </header>
+
+    <div class="top-channels-slider" id="topChannelsSlider">
+        <h2>Most Viewed Channels</h2>
+        <div class="slider-container">
+            <div class="slider-track" id="sliderTrack">
+                <!-- Top channel items will go here dynamically -->
+            </div>
         </div>
     </div>
-    <div class="group-filter">
-        <label for="group-select">Select Channel Group:</label>
-        <select id="group-select" onchange="filterChannels()">
-            <option value="all">All</option>
-            <option value='Entertainment'>Entertainment</option><option value='Kids'>Kids</option><option value='Movies'>Movies</option><option value='Infotainment'>Infotainment</option>        </select>
-    </div>
-    <div class="search-bar">
-        <input type="text" id="search-input" placeholder="Search Channels" onkeyup="searchChannels()">
-    </div>
-    <div class="file-container" id="channels-container">        
-        <div class='directory-item' data-group='Entertainment' data-name='Sony HD (SET HD)'><a href='https://drmlive.in/sliv/play.php?id=sony-hd'><img src='http://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_HD.png' alt='Sony HD (SET HD)' loading='lazy'></a><a href='https://drmlive.in/sliv/play.php?id=sony-hd'>Sony HD (SET HD)</a></div><div class='directory-item' data-group='Entertainment' data-name='Sony SAB HD'><a href='https://drmlive.in/sliv/play.php?id=sony-sab-hd'><img src='http://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_SAB_HD.png' alt='Sony SAB HD' loading='lazy'></a><a href='https://drmlive.in/sliv/play.php?id=sony-sab-hd'>Sony SAB HD</a></div><div class='directory-item' data-group='Entertainment' data-name='Sony Marathi'><a href='https://drmlive.in/sliv/play.php?id=sony-marathi'><img src='http://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_Marathi_SD.png' alt='Sony Marathi' loading='lazy'></a><a href='https://drmlive.in/sliv/play.php?id=sony-marathi'>Sony Marathi</a></div><div class='directory-item' data-group='Entertainment' data-name='Sony Pal'><a href='https://drmlive.in/sliv/play.php?id=sony-pal'><img src='http://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_Pal.png' alt='Sony Pal' loading='lazy'></a><a href='https://drmlive.in/sliv/play.php?id=sony-pal'>Sony Pal</a></div><div class='directory-item' data-group='Entertainment' data-name='Sony Aath'><a href='https://drmlive.in/sliv/play.php?id=sony-aath'><img src='http://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_aath.png' alt='Sony Aath' loading='lazy'></a><a href='https://drmlive.in/sliv/play.php?id=sony-aath'>Sony Aath</a></div><div class='directory-item' data-group='Kids' data-name='Sony Yay'><a href='https://drmlive.in/sliv/play.php?id=sony-yay'><img src='http://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_Yay_Hindi.png' alt='Sony Yay' loading='lazy'></a><a href='https://drmlive.in/sliv/play.php?id=sony-yay'>Sony Yay</a></div><div class='directory-item' data-group='Movies' data-name='Sony MAX HD'><a href='https://drmlive.in/sliv/play.php?id=sony-max-hd'><img src='http://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_Max_HD.png' alt='Sony MAX HD' loading='lazy'></a><a href='https://drmlive.in/sliv/play.php?id=sony-max-hd'>Sony MAX HD</a></div><div class='directory-item' data-group='Movies' data-name='Sony MAX'><a href='https://drmlive.in/sliv/play.php?id=sony-max'><img src='http://jiotv.catchup.cdn.jio.com/dare_images/images/SET_MAX.png' alt='Sony MAX' loading='lazy'></a><a href='https://drmlive.in/sliv/play.php?id=sony-max'>Sony MAX</a></div><div class='directory-item' data-group='Movies' data-name='Sony WAH'><a href='https://drmlive.in/sliv/play.php?id=sony-wah'><img src='http://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_Wah.png' alt='Sony WAH' loading='lazy'></a><a href='https://drmlive.in/sliv/play.php?id=sony-wah'>Sony WAH</a></div><div class='directory-item' data-group='Movies' data-name='Sony MAX 2'><a href='https://drmlive.in/sliv/play.php?id=sony-max-2'><img src='http://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_MAX2.png' alt='Sony MAX 2' loading='lazy'></a><a href='https://drmlive.in/sliv/play.php?id=sony-max-2'>Sony MAX 2</a></div><div class='directory-item' data-group='Movies' data-name='Sony PIX HD'><a href='https://drmlive.in/sliv/play.php?id=sony-pix-hd'><img src='http://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_Pix_HD.png' alt='Sony PIX HD' loading='lazy'></a><a href='https://drmlive.in/sliv/play.php?id=sony-pix-hd'>Sony PIX HD</a></div><div class='directory-item' data-group='Infotainment' data-name='Sony BBC Earth HD'><a href='https://drmlive.in/sliv/play.php?id=sony-bbc-earth-hd'><img src='http://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_BBC_Earth_HD.png' alt='Sony BBC Earth HD' loading='lazy'></a><a href='https://drmlive.in/sliv/play.php?id=sony-bbc-earth-hd'>Sony BBC Earth HD</a></div><div class='directory-item' data-group='Entertainment' data-name='Sony KAL'><a href='https://drmlive.in/sliv/play.php?id=sony-kal'><img src='https://i.postimg.cc/ZqnmcXdx/Sony-KAL.png' alt='Sony KAL' loading='lazy'></a><a href='https://drmlive.in/sliv/play.php?id=sony-kal'>Sony KAL</a></div>    </div>
-        
-            <!-- Bottom Slide Bar -->
-  <div class="slide-bar-bottom">
-    <div class="slide-bar-text">
-      📢 Welcome to sonic kuwal TV Channel List! Explore channels by category, search for name the channel || least update for tv channel list join telegram channel :- @SONICKUWALUPDATEKANHA
-    </div>
-  </div>
 
+    <div class="channel-list" id="channelList">
+        <!-- Channel items will go here dynamically -->
+    </div>
+
+    <script src="script.js"></script>
     <script>
-        function filterChannels() {
-            var selectedGroup = document.getElementById('group-select').value;
-            var channels = document.querySelectorAll('.directory-item');
-            
-            channels.forEach(function(channel) {
-                if (selectedGroup === 'all' || channel.getAttribute('data-group') === selectedGroup) {
-                    channel.style.display = 'block';
-                } else {
-                    channel.style.display = 'none';
-                }
-            });
-        }
+        document.addEventListener('DOMContentLoaded', function() {
+    const channelListDiv = document.getElementById('channelList');
+    const searchInput = document.getElementById('channelSearch');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const sliderTrackDiv = document.getElementById('sliderTrack');
 
-        function searchChannels() {
-            var input = document.getElementById('search-input').value.toLowerCase();
-            var channels = document.querySelectorAll('.directory-item');
-            
-            channels.forEach(function(channel) {
-                var name = channel.getAttribute('data-name').toLowerCase();
-                if (name.includes(input)) {
-                    channel.style.display = 'block';
-                } else {
-                    channel.style.display = 'none';
-                }
-            });
-        }
 
-        const checkbox = document.getElementById("checkbox");
-        checkbox.addEventListener("change", () => {
-            document.body.classList.toggle("dark-mode");
-        });
+    // Sample channel data
+    const channels = [
+        { id: 1, name: "Sports Zone", category: "sports", imageUrl: "https://placehold.co/80x80/87ceeb/fff", url: "https://example.com/sports", views: 1000, isLive: true },
+        { id: 2, name: "News Today", category: "news", imageUrl: "https://placehold.co/80x80/87ceeb/fff", url: "https://example.com/news", views: 500, isLive: false },
+        { id: 3, name: "Live Action", category: "live_tv", imageUrl: "https://placehold.co/80x80/87ceeb/fff", url: "https://example.com/live", views: 1500, isLive: true },
+        { id: 4, name: "Global Sports", category: "sports", imageUrl: "https://placehold.co/80x80/87ceeb/fff", url: "https://example.com/global_sports", views: 800, isLive: false },
+        { id: 5, name: "Breaking News", category: "news", imageUrl: "https://placehold.co/80x80/87ceeb/fff", url: "https://example.com/breaking_news", views: 1200, isLive: true },
+        { id: 6, name: "City Live", category: "live_tv", imageUrl: "https://placehold.co/80x80/87ceeb/fff", url: "https://example.com/city_live", views: 700, isLive: false },
+    ];
+
+     // function to generate channel HTML
+    function generateChannelHTML(channel) {
+        return `
+            <div class="channel-item" data-category="${channel.category}" data-channel-id="${channel.id}" data-channel-name="${channel.name.toLowerCase()}">
+                <img src="${channel.imageUrl}" alt="${channel.name} Icon">
+                <h3>${channel.name}</h3>
+                <a href="${channel.url}" target="_blank">Watch Now</a>
+            </div>
+        `;
+    }
+
+    // function to generate slider channel HTML
+    function generateSliderChannelHTML(channel) {
+      return `
+      <div class="slider-channel-item">
+          <a href="${channel.url}" target="_blank">
+            <img src="${channel.imageUrl}" alt="${channel.name} Icon">
+              <p>${channel.name}</p>
+              ${channel.isLive ? '<i class="fas fa-circle"></i>' : '<i class="fas fa-record-vinyl"></i>'}
+          </a>
+      </div>
+
+      `;
+    }
+
+    // Function to filter channels
+    function filterChannels() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const selectedCategory = categoryFilter.value;
+
+      let filteredChannels = channels;
+
+    if(searchTerm) {
+         filteredChannels = filteredChannels.filter(channel => {
+           return channel.name.toLowerCase().includes(searchTerm) || String(channel.id).includes(searchTerm);
+         })
+    }
+
+    if (selectedCategory !== 'all') {
+       filteredChannels = filteredChannels.filter(channel => channel.category === selectedCategory);
+    }
+
+    channelListDiv.innerHTML = '';
+    filteredChannels.forEach(channel => {
+       channelListDiv.innerHTML += generateChannelHTML(channel);
+    });
+
+    }
+    // sort the channels by views
+    const topChannels = [...channels].sort((a, b) => b.views - a.views).slice(0, 5);
+
+    // render the slider
+    topChannels.forEach(channel => {
+        sliderTrackDiv.innerHTML += generateSliderChannelHTML(channel);
+    });
+
+
+    // initial load
+    filterChannels();
+
+    // event listeners
+    searchInput.addEventListener('input', filterChannels);
+    categoryFilter.addEventListener('change', filterChannels);
+
+
+});
     </script>
-  
 </body>
 </html>
