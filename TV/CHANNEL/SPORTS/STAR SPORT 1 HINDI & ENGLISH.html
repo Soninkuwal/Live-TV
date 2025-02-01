@@ -1,0 +1,97 @@
+<!-- Player plyr.io -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Video Player plyr.js</title>
+	<link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
+	<script src="https://cdn.plyr.io/3.6.8/plyr.polyfilled.js"></script>
+</head>
+<body>
+    
+            <!-- telegram link in body tag -->
+
+  
+	<div class="container">
+      
+    <!-- Video Logo (Watermark) -->
+    <div class="video-title" style="text-align: center; font-size: 30px; color: green; margin-bottom: 15px;">STAR SPORT 1 HINDI & ENGLISH</div>
+      
+	<video controls crossorigin playsinline poster="">
+		 <source src="https://vkvsd55.okcdn.ru/cmaf/7570831313639/sig/RZ9JFwqoNao/srcIp/13.201.187.28/urls/45.136.20.89/expires/1738530679300/clientType/13/srcAg/CHROME/fromCache/1/mid/9239821364199/id/7570831313639/get/COfXlIL1jAIQ6AcYAzIICgYIgAUQ6AI6BAjE2AJaBggBEAIoF2ICCBB6M-YI4hLWKg/track.m3u8" type="video/mp4" size="360">
+			<source src="https://vkvsd55.okcdn.ru/cmaf/7570831313639/sig/RZ9JFwqoNao/srcIp/13.201.187.28/urls/45.136.20.89/expires/1738530679300/clientType/13/srcAg/CHROME/fromCache/1/mid/9239821364199/id/7570831313639/get/COfXlIL1jAIQ6AcYBDIICgYI2AYQ4AM6BAjE2AJaBggBEAIoF2ICCBBpMeOygwPTvA/track.m3u8" type="video/mp4" size="480">
+			<source src="https://vkvsd55.okcdn.ru/cmaf/7570831313639/sig/RZ9JFwqoNao/srcIp/13.201.187.28/urls/45.136.20.89/expires/1738530679300/clientType/13/srcAg/CHROME/fromCache/1/mid/9239821364199/id/7570831313639/get/COfXlIL1jAIQ6AcYBTIICgYIgAoQ0AU6BAjE2AJaBggDEAIoF2ICCBg4z8UlgPWKzA/track.m3u8" type="video/mp4" size="720">
+			<source src="https://vkvsd55.okcdn.ru/cmaf/7570831313639/sig/RZ9JFwqoNao/srcIp/13.201.187.28/urls/45.136.20.89/expires/1738530679300/clientType/13/srcAg/CHROME/fromCache/1/mid/9239821364199/id/7570831313639/get/COfXlIL1jAIQ6AcYBjIICgYIgA8QuAg6BAjE2AJaBggDEAIoF2ICCCCz_WvSGC8Tmg/track.m3u8" size="1080">
+
+			<!-- Caption files -->
+			<track kind="captions" label="English" srclang="en" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt"
+					default>
+      
+             <!-- Example of adding multiple audio tracks -->
+        <track kind="subtitles" label="Audio Hindi" srclang="hi" src="https://path/to/audio-hi.m3u8">
+        <track kind="subtitles" label="Audio English" srclang="en" src="https://path/to/audio-en.m3u8">
+        <track kind="subtitles" label="Audio French" srclang="fr" src="https://path/to/audio-fr.m3u8">
+			<track kind="captions" label="Français" srclang="fr" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.fr.vtt">
+			<!-- Fallback for browsers that don't support the <video> element -->
+			<a href="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" download>Download</a>
+      </video>
+      
+  
+
+  </div>
+<!-- Plyr resources and browser polyfills are specified in the pen settings -->
+
+<style type="text/css">
+	.container {
+	margin: 50px auto;
+	max-width: 500px;
+}
+                <!-- this tag telegram style enter -->
+        /* Social media links style */
+        .plyr__social {
+            position: absolute;
+            bottom: 300px;
+            left: 10px;
+            z-index: 9999;
+            display: flex;
+            gap: 10px;
+        }
+
+        .plyr__social img {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+</style>
+
+<script type="text/javascript">
+    const controls = [
+            'play-large',
+            'restart',     // Restart playback
+            'rewind','play', 
+            'fast-forward', 
+            'progress', 
+            'current-time',
+            'duration',
+            'mute',
+            'volume',
+            'captions',
+            'settings',
+            'pip',
+            'airplay',
+            'download',
+            'fullscreen'
+        ];
+  
+  
+  document.addEventListener('DOMContentLoaded', () => {
+            const player = Plyr.setup('video', { controls });
+  
+        });
+
+// Expose player so it can be used from the console
+window.player = player;
+</script>
+
+</body>
+          </html>
