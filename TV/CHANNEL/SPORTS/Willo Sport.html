@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JW Player Example</title>
+    <script src="https://cdn.jwplayer.com/libraries/KB5zFt7A.js"></script>
+    <style>
+        .watermark {
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            font-size: 15px;
+            color: gold;
+            animation: fadeIn 3s ease-in-out infinite;
+        }
+        @keyframes fadeIn {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div id="player"></div>
+    <div class="watermark">@SONICKUWALSSCBOT</div>
+
+    <script>
+        jwplayer("player").setup({
+            playlist: [{
+                title: "Sport Match Highlights", // Player title
+                sources: [
+                    { file: "https://amg01269-amg01269c1-willowtv-us-5479.playouts.now.amagi.tv/playlist/amg01269-willowtvfast-willowplus-willowtvus/playlist.m3u8" }, // Example m3u8 link
+                    { file: "https://example.com/your-video.mpd" }, // Example mpd link
+                    { file: "https://example.com/your-video.mkv" }, // Example mkv link
+                    { file: "https://example.com/your-audio.m4a" } // Example m4a link
+                ],
+                image: "https://example.com/thumbnail.jpg",
+                tracks: [
+                    {
+                        file: "https://example.com/subtitles_en.vtt", // Example subtitle track
+                        label: "English",
+                        kind: "captions",
+                        "default": true
+                    },
+                    {
+                        file: "https://example.com/subtitles_es.vtt", // Example subtitle track
+                        label: "Spanish",
+                        kind: "captions"
+                    },
+                    {
+                        file: "https://example.com/audio_track_1.m4a", // Example audio track
+                        label: "Audio Track 1",
+                        kind: "audio"
+                    },
+                    {
+                        file: "https://example.com/audio_track_2.m4a", // Example audio track
+                        label: "Audio Track 2",
+                        kind: "audio"
+                    }
+                ]
+            }],
+            primary: "html5",
+            playbackRates: [0.5, 1, 1.25, 1.5, 1.75, 2, 2.50, 3, 3.5, 4], // Multiple playback speeds
+            advertising: {
+                client: "vast",
+                tag: "https://example.com/vast_tag.xml" // Custom advertisement tag
+            },
+            skin: {
+                name: "stormtrooper"
+            },
+            width: "100%",
+            aspectratio: "16:9"
+        });
+    </script>
+</body>
+</html>
