@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             description: 'Description for Episode 1.',
                             public_time: '12 Dec 2023',
                             duration_time: '30 min',
-                             videoUrl: 'videos/webseries1/session1/episode1.m3u8',
+                             videoUrl: 'https://appx-transcoded-videos-mcdn.akamai.net.in/videos/rozgar-data/982156-1720417422/hls-c4dbae/master-7517803.870831579.m3u8',
                             videoUrl720p:'videos/webseries1/session1/episode1_720p.mp4',
                             videoUrl480p:'videos/webseries1/session1/episode1_480p.mp4',
                             videoUrl1080p:'videos/webseries1/session1/episode1_1080p.mp4',
