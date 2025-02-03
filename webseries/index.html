@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Series Portal</title>
+    <link rel="stylesheet" href="style.css">
+        <script src="assets/jwplayer/jwplayer.js"></script>
+         <!-- JW Player library -->
+        <script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
+</head>
+<body>
+    <div class="top-slider-container">
+        <div class="top-slider-track">
+           <span class="top-slider-item">Welcome to our amazing web series site</span>
+            <span class="top-slider-item">New web series are waiting for you!</span>
+             <span class="top-slider-item">Enjoy High Quality videos</span>
+        </div>
+    </div>
+    <header>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search Web Series">
+            <button onclick="performSearch()">Search</button>
+        </div>
+    </header>
+    <main>
+        <section class="webseries-list" id="webseries-list">
+          <!-- Web series list -->
+        </section>
+        <div class="popup-overlay" id="popup-overlay">
+            <div class="popup-content" id="popup-content">
+                <button class="popup-close-button" id="popup-close-button">×</button>
+                <div class="popup-inner-content" id="popup-inner-content">
+                    <!-- Content will be added here -->
+                </div>
+            </div>
+        </div>
+          <div class="video-popup-overlay" id="video-popup-overlay">
+                <div class="video-popup-content" id="video-popup-content">
+                    <button class="video-popup-close-button" id="video-popup-close-button">×</button>
+                     <div class="video-player-container">
+                         <div class="video-top-bar">
+                           <div class="video-title-bar" id="video-title-bar"></div>
+                            <div class="video-views" id="video-views"></div>
+                           </div>
+                            <div id="player" class="player-container"></div>
+                            <div class="video-episode-info">
+                                <div class="video-episode-image" id="video-episode-image"></div>
+                                <div class="video-episode-details">
+                                    <h4 class="video-episode-session" id="video-episode-session"></h4>
+                                    <p class="video-episode-time" id="video-episode-time"></p>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+          <div class="bottom-slider-container">
+              <div class="bottom-slider-track">
+                  <span class="bottom-slider-item">Copyright 2023</span>
+                  <span class="bottom-slider-item">Contact us</span>
+                    <span class="bottom-slider-item">Privacy & Terms</span>
+              </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+              </html>
