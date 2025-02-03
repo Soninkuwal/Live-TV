@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Channel Repository</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header>
+        <h1> live TV Channel </h1>
+        <div class="search-bar">
+            <input type="text" id="channelSearch" placeholder="Search by ID or Name...">
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+                <option value="sports">Sports</option>
+                <option value="live_tv">Live TV</option>
+                <option value="news">News</option>
+            </select>
+        </div>
+    </header>
+
+    <div class="top-channels-slider" id="topChannelsSlider">
+        <h2>Most Viewed Channels</h2>
+        <div class="slider-container">
+            <div class="slider-track" id="sliderTrack">
+                <!-- Top channel items will go here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <div class="channel-list" id="channelList">
+        <!-- Channel items will go here dynamically -->
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const channelListDiv = document.getElementById('channelList');
+    const searchInput = document.getElementById('channelSearch');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const sliderTrackDiv = document.getElementById('sliderTrack');
+
+
+    // Sample channel data
+    const channels = [
+        { id: 1, name: "Willo Sport", category: "sports", imageUrl: "TV/PHOTO/Willo Sport .jpeg", url: "TV/CHANNEL/SPORTS/Willo Sport.html", views: 1000, isLive: true },
+        { id: 2, name: "News Today", category: "news", imageUrl: "https://placehold.co/80x80/87ceeb/fff", url: "webseries/index.html", views: 500, isLive: false },
+        { id: 3, name: "Live Action", category: "live_tv", imageUrl: "https://placehold.co/80x80/87ceeb/fff", url: "https://example.com/live", views: 1500, isLive: true },
+        { id: 4, name: "STAR SPORT 1 HINDI & ENGLISH", category: "sports", imageUrl: "TV/PHOTO/STAR SPORT 1 HINDI & ENGLISH.jpeg", url: "TV/CHANNEL/SPORTS/STAR SPORT 1 HINDI & ENGLISH.html", views: 800, isLive: false },
+        { id: 5, name: "Breaking News", category: "news", imageUrl: "https://placehold.co/80x80/87ceeb/fff", url: "https://example.com/breaking_news", views: 1200, isLive: true },
+        { id: 6, name: "City Live", category: "live_tv", imageUrl: "https://placehold.co/80x80/87ceeb/fff", url: "https://example.com/city_live", views: 700, isLive: false },
+    ];
+
+     // function to generate channel HTML
+    function generateChannelHTML(channel) {
+        return `
+            <div class="channel-item" data-category="${channel.category}" data-channel-id="${channel.id}" data-channel-name="${channel.name.toLowerCase()}">
+                <img src="${channel.imageUrl}" alt="${channel.name} Icon">
+                <h3>${channel.name}</h3>
+                <a href="${channel.url}" rel="nofollow">Watch Now</a>
+            </div>
+        `;
+    }
+
+    // function to generate slider channel HTML
+    function generateSliderChannelHTML(channel) {
+      return `
+      <div class="slider-channel-item">
+          <a href="${channel.url}" rel="nofollow">
+            <img src="${channel.imageUrl}" alt="${channel.name} Icon">
+              <p>${channel.name}</p>
+              ${channel.isLive ? '<i class="fas fa-circle"></i>' : '<i class="fas fa-record-vinyl"></i>'}
+          </a>
+      </div>
+
+      `;
+    }
+
+    // Function to filter channels
+    function filterChannels() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const selectedCategory = categoryFilter.value;
+
+      let filteredChannels = channels;
+
+    if(searchTerm) {
+         filteredChannels = filteredChannels.filter(channel => {
+           return channel.name.toLowerCase().includes(searchTerm) || String(channel.id).includes(searchTerm);
+         })
+    }
+
+    if (selectedCategory !== 'all') {
+       filteredChannels = filteredChannels.filter(channel => channel.category === selectedCategory);
+    }
+
+    channelListDiv.innerHTML = '';
+    filteredChannels.forEach(channel => {
+       channelListDiv.innerHTML += generateChannelHTML(channel);
+    });
+
+    }
+    // sort the channels by views
+    const topChannels = [...channels].sort((a, b) => b.views - a.views).slice(0, 5);
+
+    // render the slider
+    topChannels.forEach(channel => {
+        sliderTrackDiv.innerHTML += generateSliderChannelHTML(channel);
+    });
+
+
+    // initial load
+    filterChannels();
+
+    // event listeners
+    searchInput.addEventListener('input', filterChannels);
+    categoryFilter.addEventListener('change', filterChannels);
+
+
+});
+    </script>
+</body>
+</html>
