@@ -5,6 +5,171 @@ body {
             background-color: #000;
             color: #fff;
         }
+
+
+        .nav-bar {
+            position: fixed;
+            height: 30px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: green;
+            z-index: 1000;
+            padding: 0px;
+            border-radius: 30px 10px;
+            border: 1.5px solid red;
+        }
+
+        .top-bar {
+            top: 0;
+        }
+
+        .bottom-bar {
+            bottom: 0;
+        }
+
+        .nav-icon {
+            position: fixed;
+            color: red;
+            font-size: 24px;
+            padding: 0px;
+            cursor: pointer;
+            height: 1px;
+            width: 10%;
+            border-radius: 40px 20px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            justify-content: center;
+
+        }
+
+        .icon-menu {
+            display: none;
+            position: absolute;
+            background-color: yellow;
+            flex-direction: column;
+            padding: 5px;
+            border-radius: 10px 30px;
+            margin-top: 40px;
+            z-index: 1001;
+            border: 4px solid green;
+        }
+
+        .bottom-bar .icon-menu {
+            margin-top: 0;
+            margin-bottom: 10px;
+            bottom: 100%;
+            padding: 5px;
+            border-radius: 30px 10px;
+            border: 4px solid red;
+        }
+
+        .icon-menu a {
+            color: red;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            border-radius: 30px 30px;
+            border: 2px solid pink;
+        }
+
+        .icon-menu a i {
+            margin-right: 10px;
+        }
+
+        .icon-menu a:hover {
+            background-color: #555;
+	}
+
+
+
+
+        /* Slide Bar */
+        .slide-bar-top {
+            background-color: Navy;
+            white: auto;
+            height: auto;
+            color: Yellow;
+            padding: auto;
+            font-size: 20px;
+            border-radius: 10px 30px;
+            border: 3px solid Yellow;
+            margin-bottom: 10px;
+            margin-top: 40px;
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slide-bar-bottom {
+            background-color: yellow;
+            white: auto;
+            height: auto;
+            color: red;
+            padding: auto;
+            font-size: 20px;
+            border-radius: 30px 10px;
+            border: 3px solid green;
+            margin-bottom: 40px;
+            margin-top: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slide-bar-text {
+            display: inline-block;
+            animation: slide 30s linear infinite;
+        }
+
+        @keyframes slide {
+            100% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+	}
+
+
+
+                @import url(https://fonts.googleapis.com/css2?family=Montserrat&display=swap);
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: auto;
+            padding: auto;
+            background-color: #f1f1f1;
+            color: red;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            font-family: Gloock, serif;
+            font-weight: 700;
+            font-size: 12px;
+            color: #333;
+            text-align: centre;
+            border: 3px solid green;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            text-shadow: 5px 3px 4px rgba(0, 0, 0, .3);
+            background-color: pink;
+            padding: 7px 20px;
+            border-radius: 40px 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+        }
+
+        .toggle-wrapper {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+	}
         .file-container {
             display: flex;
             flex-wrap: wrap;
