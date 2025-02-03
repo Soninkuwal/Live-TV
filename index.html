@@ -12,25 +12,86 @@
     
 </head>
 <body>
+
+        <!-- Top Bar -->
+    <div class="nav-bar top-bar">
+        <div class="nav-icon" onclick="toggleMenu('top-menu')">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="icon-menu" id="top-menu">
+            <a href="#home"><i class="fas fa-home"></i> Home</a>
+            <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+            <a href="#services"><i class="fas fa-cogs"></i> Services</a>
+            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="nav-bar bottom-bar">
+        <div class="nav-icon" onclick="toggleMenu('bottom-menu')">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="icon-menu" id="bottom-menu">
+            <a href="#settings"><i class="fas fa-cog"></i> Settings</a>
+            <a href="#profile"><i class="fas fa-user"></i> Profile</a>
+            <a href="#notifications"><i class="fas fa-bell"></i> Notifications</a>
+            <a href="#help"><i class="fas fa-question-circle"></i> Help</a>
+        </div>
+    </div>
+
+
+    <!-- telegram link in body tag -->
+    <!-- <a href="https://t.me/Sonickuwalupdate" class="telegram-toggle">
+                         <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg"></a> -->
+
+    <div
+        style="position: fixed; top: 40%; right: 3px; z-index: 9999; display: flex; flex-direction: column; align-items: center;">
+        <a href="https://t.me/SONICKUWALUPDATEKANHA" target="_blank" style="margin: 5px;">
+            <img src="https://img.icons8.com/?size=100&amp;id=5mIvDYZUWDCF&amp;format=png&amp;color=000000"
+                alt="Telegram" style="width: 40px; height: 40px;" />
+        </a>
+        <a href="https://youtube.com/@sonickuwal?si=r-qOBYHjHp6DKJ5P" target="_blank" style="margin: 5px;">
+            <img src="https://img.icons8.com/?size=100&amp;id=19318&amp;format=png&amp;color=000000" alt="YouTube"
+                style="width: 40px; height: 40px;" />
+        </a>
+        <a href="https://t.me/SONICKUWALMOVIESWEBSERIES" target="_blank" style="margin: 5px;">
+            <img src="https://img.icons8.com/?size=100&amp;id=5mIvDYZUWDCF&amp;format=png&amp;color=000000"
+                alt="Telegram" style="width: 40px; height: 40px;" />
+        </a>
+        <!--
+                       <a href="https://facebook.com/yourpage" target="_blank" style="margin: 5px;">
+                         <img src="https://img.icons8.com/?size=100&id=118497&format=png&color=000000" alt="Facebook" style="width: 40px; height: 40px;">
+                       </a>
+                       <a href="https://instagram.com/yourprofile" target="_blank" style="margin: 5px;">
+                         <img src="https://img.icons8.com/?size=100&id=32323&format=png&color=000000" alt="Instagram" style="width: 40px; height: 40px;">
+                       </a> -->
+    </div>
+
+    <!-- Top Slide Bar -->
+    <div class="slide-bar-top">
+        <div class="slide-bar-text">
+            {[note] :- THIS WEBSITE GENRATE BY :- KANHAIYA LAL MEENA KUWAL} Welcome to sonic kuwal TV Channel List!
+            Explore channels by category, search for name the channel || least update for tv channel list join telegram
+            channel :- @SONICKUWALUPDATEKANHA
+        </div>
+    </div>
+
+
+    <div class="header-container">
+        <h1 id="title">SONIC KUWAL TV</h1>
+        <div class="toggle-wrapper">
+            <input type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" class="checkbox-label">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <span class="ball"></span>
+            </label>
+        </div>
+    </div>
+
     
-    <div style="position: fixed; top: 50%; right: 10px; z-index: 9999; display: flex; flex-direction: column; align-items: center;">
-  <a href="https://t.me/SONICKUWALUPDATEKANHA" target="_blank" style="margin: 5px;">
-    <img src="https://img.icons8.com/?size=100&amp;id=5mIvDYZUWDCF&amp;format=png&amp;color=000000" alt="Telegram" style="width: 40px; height: 40px;" />
-  </a>
-  <a href="https://youtube.com/@sonickuwal?si=r-qOBYHjHp6DKJ5P" target="_blank" style="margin: 5px;">
-    <img src="https://img.icons8.com/?size=100&amp;id=19318&amp;format=png&amp;color=000000" alt="YouTube" style="width: 40px; height: 40px;" />
-    </a>
-      <a href="https://t.me/SONICKUWALMOVIESWEBSERIES" target="_blank" style="margin: 5px;">
-    <img src="https://img.icons8.com/?size=100&amp;id=5mIvDYZUWDCF&amp;format=png&amp;color=000000" alt="Telegram" style="width: 40px; height: 40px;" />
-  </a>
-<!--
-  <a href="https://facebook.com/yourpage" target="_blank" style="margin: 5px;">
-    <img src="https://img.icons8.com/?size=100&id=118497&format=png&color=000000" alt="Facebook" style="width: 40px; height: 40px;">
-  </a>
-  <a href="https://instagram.com/yourprofile" target="_blank" style="margin: 5px;">
-    <img src="https://img.icons8.com/?size=100&id=32323&format=png& color=000000" alt="Instagram" style="width: 40px; height: 40px;">
-  </a> -->
-</div>
+    
+
 
     <!-- <a href="https://t.me/Sonickuwalupdate" class="telegram-toggle">JOIN TELEGRAM</a> -->
     
@@ -57,5 +118,16 @@
       
       <div class='directory-item'><a href='https://drmlive.in/australia/'><img src='https://drmlive.in/australia.png' alt='Australia Only'></a><a href='https://drmlive.in/australia/'>Australia Only</a></div>
  </div>
+
+    
+        <!-- Bottom Slide Bar -->
+    <div class="slide-bar-bottom">
+        <div class="slide-bar-text">
+            {[note] :- THIS WEBSITE GENRATE BY :- KANHAIYA LAL MEENA KUWAL} Welcome to sonic kuwal TV Channel List!
+            Explore channels by category, search for name the channel || least update for tv channel list join telegram
+            channel :- @SONICKUWALUPDATEKANHA
+        </div>
+    </div>
+    
 </body>
 </html>
