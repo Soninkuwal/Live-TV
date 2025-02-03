@@ -1,17 +1,8 @@
-
-body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            margin: 0;
-            padding: 10px;
-            background-color: #000;
-            color: #fff;
-}
-
-
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-	}
+        }
+
         .nav-bar {
             position: fixed;
             height: 30px;
@@ -85,9 +76,180 @@ body {
 
         .icon-menu a:hover {
             background-color: #555;
-	}
+        }
 
 
+
+
+        @import url(https://fonts.googleapis.com/css2?family=Montserrat&display=swap);
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: auto;
+            padding: auto;
+            background-color: #f1f1f1;
+            color: red;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            font-family: Gloock, serif;
+            font-weight: 700;
+            font-size: 12px;
+            color: #333;
+            text-align: centre;
+            border: 3px solid green;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            text-shadow: 5px 3px 4px rgba(0, 0, 0, .3);
+            background-color: pink;
+            padding: 7px 20px;
+            border-radius: 40px 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+        }
+
+        .toggle-wrapper {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .file-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            padding: auto;
+        }
+
+        .directory-item,
+        .file-item {
+            max-width: auto;
+            height: auto;
+            margin: auto;
+            text-align: centre;
+            border-radius: 40px 10px;
+            border: 3px solid gold;
+            overflow: hidden;
+            transition: transform .3s ease, box-shadow .3s ease;
+            background-color: #fff;
+            padding: 7px;
+        }
+
+        .directory-item img,
+        .file-item img {
+            max-width: 70px;
+            border-radius: 10px 40px;
+            border: 3px solid yellow;
+            background-color: pink;
+
+            height: auto;
+            display: block;
+            margin: 10px auto;
+            transition: transform .3s ease;
+        }
+
+        .directory-item a,
+        .file-item a {
+            text-decoration: none;
+            color: #00bfff;
+            max-width: 100px;
+            height: auto;
+            font-weight: 700;
+            display: block;
+            margin-top: auto;
+            transition: color .3s ease;
+        }
+
+        .directory-item:hover,
+        .file-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        }
+
+        .directory-item img:hover,
+        .file-item img:hover {
+            transform: scale(1.1);
+        }
+
+        .directory-item a:hover,
+        .file-item a:hover {
+            color: #007bff;
+        }
+
+        h1 {
+            text-align: center;
+            color: red;
+            margin-bottom: 1px;
+        }
+
+        .group-filter {
+            margin-bottom: 10px;
+            text-align: center;
+            padding: 10px 20px;
+            color: yellow;
+            background-color: red;
+            flex-direction: column;
+            border-radius: 20px 50px;
+            border: 3px solid gold;
+        }
+
+        .group-filter select {
+            padding: 10px 20px;
+            font-size: 15px;
+            color: red;
+            background-color: gold;
+            flex-direction: column;
+            border-radius: 50px 20px;
+            border: 3px solid green;
+        }
+        
+        .search-bar input {
+            padding: 10px 20px;
+            font-size: 15px;
+            border-radius: 50px 20px;
+            border: 3px solid red;
+            background-color: #fff;
+            color: green;
+        }
+
+        .search-bar {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .dark-mode {
+            background-color: pink;
+            color: red;
+        }
+
+        .dark-mode .header-container {
+            background-color: #111;
+            color: yellow;
+        }
+
+        .dark-mode .directory-item {
+            background-color: #222;
+            color: #fff;
+        }
+
+        .dark-mode .directory-item a {
+            color: red;
+        }
+
+        .dark-mode .directory-item a:hover {
+            color: #fff;
+        }
+
+        .dark-mode .group-filter select,
+        .dark-mode .search-bar input {
+            background-color: #333;
+            color: #fff;
+            border: 3px solid #555;
+        }
 
 
         /* Slide Bar */
@@ -136,131 +298,31 @@ body {
             100% {
                 transform: translateX(-100%);
             }
-	}
-
-
-
-                @import url(https://fonts.googleapis.com/css2?family=Montserrat&display=swap);
-
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            margin: auto;
-            padding: auto;
-            background-color: #f1f1f1;
-            color: red;
         }
 
-        .header-container {
-            display: flex;
-            align-items: center;
-            font-family: Gloock, serif;
-            font-weight: 700;
-            font-size: 12px;
-            color: #333;
-            text-align: centre;
-            border: 3px solid green;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-            margin-top: 10px;
-            text-shadow: 5px 3px 4px rgba(0, 0, 0, .3);
-            background-color: pink;
-            padding: 7px 20px;
-            border-radius: 40px 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
-        }
 
-        .toggle-wrapper {
-            margin-left: auto;
-            display: flex;
-            align-items: center;
-	}
-        .file-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            padding: 10px;
-        }
-        .directory-item, .file-item {
-            margin: 10px;
-            text-align: center;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform .3s ease, box-shadow .3s ease;
-            background-color: #1a1a1a;
-            padding: 10px;
-            width: calc(14.28% - 20px);
-            box-sizing: border-box;
-        }
-        .directory-item img, .file-item img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            transition: transform .3s ease;
-        }
-        .directory-item a, .file-item a {
-            text-decoration: none;
-            color: #00bfff;
-            font-weight: 700;
-            display: block;
-            margin-top: 5px;
-            transition: color .3s ease;
-        }
-        .directory-item:hover, .file-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 10px rgba(255, 255, 255, .3);
-        }
-        .directory-item img:hover, .file-item img:hover {
-            transform: scale(1.1);
-        }
-        .directory-item a:hover, .file-item a:hover {
+        /* telegram icons */
+        .telegram-toggle {
+            position: fixed;
+            top: 20px;
+            right: 10px;
+            background-color: #0088cc;
             color: #fff;
-        }
-        h1 {
-            text-align: center;
-            color: #00bfff;
-            margin-bottom: 20px;
-        }
-        .telegram-toggle { 
-            position: fixed; 
-            top: 400px; 
-            right: 10px; 
-            background-color: #0088cc; 
-            color: #fff; 
-            padding: 10px 15px; 
-            border-radius: 50px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            display: flex; 
-            align-items: center; 
+            padding: 10px 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
             z-index: 1001;
         }
-        .telegram-toggle img { 
-            width: 10px; 
-            height: 10px; 
+
+        .telegram-toggle img {
+            width: 400px;
+            height: 40px;
             align: center;
-            margin-right: 20px; 
-        }
-        @media (max-width: 1024px) {
-            .directory-item, .file-item {
-                width: calc(25% - 20px);
-            }
-        }
-        @media (max-width: 768px) {
-            .directory-item, .file-item {
-                width: calc(33.333% - 20px);
-            }
-        }
-        @media (max-width: 480px) {
-            .directory-item, .file-item {
-                width: calc(50% - 20px);
-                margin: 5px;
-                padding: 5px;
-            }
-            h1 {
-                font-size: 24px;
-                margin-bottom: 10px;
-            }
-	}
+            margin-right: 20px;
+		}
+
+
+
