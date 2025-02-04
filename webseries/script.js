@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             description: 'Description for Episode 2.',
                             public_time: '13 Dec 2023',
                             duration_time: '30 min',
-                             videoUrl: 'videos/webseries1/session1/episode2.m3u8',
+                             videoUrl: 'webseries/videos/webseries1/session1/Power.of.Paanch.S01E01.Panchgiri.Ka.Power.html',
                             videoUrl720p:'videos/webseries1/session1/episode2_720p.mp4',
                             videoUrl480p:'videos/webseries1/session1/episode2_480p.mp4',
                             videoUrl1080p:'videos/webseries1/session1/episode2_1080p.mp4',
