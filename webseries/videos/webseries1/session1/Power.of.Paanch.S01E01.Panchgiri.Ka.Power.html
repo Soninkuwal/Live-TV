@@ -1,0 +1,110 @@
+<!-- Player plyr.io quality option and titel and watermark -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Plyr.io Player</title>
+    <!-- Plyr CSS -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.12/plyr.css" />
+    <style>
+        /* Watermark style */
+        .plyr__watermark {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 14px;
+            color: white;
+            opacity: 9.7;
+        }
+
+        /* Video title style */
+        .plyr__title {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 15px;
+            color: red;
+            font-weight: bold;
+            opacity: 9.7;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Plyr player with custom video title and watermark -->
+    <div class="plyr__title">Video Title: Plyr.io Advanced Video</div>
+    <div class="plyr__watermark">Watermark: Plyr.io</div>
+
+        <!-- Poster image -->
+
+    <video id="player" poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg" controls crossorigin playsinline>
+        <!-- Multiple quality video sources -->
+        <source src="https://vod3.cf.dmcdn.net/sec2(HYQFB-9yhDJs3fEYpXrr8MjpHTYhC0aIxsWK5uZYjtmhGmZeORVNHc0ECMndvn0Z-NV5wvBErydbCW4eezJtkyfQDUIFapjT6xpnw6dHf5CQOHg-WGFEM_pSTD4ydR9j9sEP-0SYe6hRKEHZ-_emsr08xrYtmosLZ-DcF3zqrJw)/video/258/808/566808852_mp4_h264_aac_1.m3u8#cell=cf3" type="video/mp4" size="360">
+        <source src="https://vod3.cf.dmcdn.net/sec2(aXOTap8ibbPVOdbMEs4SvbQqc5HZU2_1TCfZ4LANwUCiI5YWE8R7rhe8gehe6ym29K_KYmGy5YKnpKxPTJJT2Jl_ZqlImE2TqbHGtb-fb9g2JKgbToYMWGAnivUFY4QqDttWh1dW_E4bsdlnl7RDuxvLVh7nN6rYCnykBS95zAFhmvxpulKIvxkmTwuq4JwS)/video/258/808/566808852_mp4_h264_aac_hq_1.m3u8#cell=cf3" type="video/mp4" size="480">
+        <source src="https://vod3.cf.dmcdn.net/sec2(0jsxmwcm5KRGf7O-imH8fNGwE0i9qiI49hFzuU487dJr75HesGgjIo8MeTyQpJuPAviyGRmktyfx8lVioHe93PeBQyXmJjtJrRBzfp0BBI_6BDuSfu-N7JloY_gaBpnX9r7jCdcwm7ZSlnLYsuHEVk-c5DAYuagxNdC3CO0tjxUp5QYogqkGmPBzVdX2fk2P)/video/258/808/566808852_mp4_h264_aac_hd_1.m3u8#cell=cf3" type="video/mp4" size="720">
+        <source src="https://vod3.cf.dmcdn.net/sec2(iPJs4OYKbYvX5DO1_ODtz2pT7pVXGZhMeUsJNHJ2JJ7TLPN9T3IpASbMX2Yw5WZDNfCyKQRK_xpMDOt5JDWXBL2MQIwiHBnzcucT0Y8xx7F45KFcQOTZulnppDbCuZ2nZO0O9bPspEgiysBVwEp4L7-IKQDJEl4HE5PXWrDrTtYRZLtz8ly3d3Uf2RC3M0bg)/video/258/808/566808852_mp4_h264_aac_fhd_1.m3u8#cell=cf3" type="video/mp4" size="1080">
+
+        <!-- Multiple language subtitle tracks -->
+        <track kind="captions" label="English" srclang="en" src="captions-en.vtt" default>
+        <track kind="captions" label="Spanish" srclang="es" src="captions-es.vtt">
+        <track kind="captions" label="French" srclang="fr" src="captions-fr.vtt">
+
+        <!-- Fallback for older browsers -->
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Plyr JS -->
+    <script src="https://cdn.plyr.io/3.6.12/plyr.polyfilled.js"></script>
+    <script>
+        // Initialize Plyr with advanced settings
+        const player = new Plyr('#player', {
+            controls: [
+                'play-large','restart','rewind','play','fast-forward','progress','current-time','duration','mute','volume','captions','settings','pip','airplay','download','fullscreen'
+            ],
+            settings: ['captions', 'quality', 'speed'],
+            quality: {
+                default: 360, // Default quality
+                options: [360, 480, 720, 1080], // Available quality options
+                forced: false, // Forces the user to select the quality manually
+                onChange: (newQuality) => {
+                    console.log('Quality changed to:', newQuality);
+                }
+            },
+            speed: {
+                selected: 1, // Default speed (1x)
+                options: [0.5, 1, 1.25, 1.50, 1.75, 2, 2.50, 3, 3.50, 4], // Speed options
+            },
+            captions: {
+                active: true, // Enable captions by default
+                language: 'en' // Default language
+            },
+            i18n: {
+                speed: 'Playback speed', // Custom text for speed control
+            },
+        });
+
+        // Add watermark functionality
+        function addWatermark() {
+            const watermark = document.createElement('div');
+            watermark.className = 'plyr__watermark';
+            watermark.textContent = '@SONICKUWALSSCBOT';
+            document.querySelector('.plyr').appendChild(watermark);
+        }
+
+        // Add video title functionality
+        function addTitle() {
+            const title = document.createElement('div');
+            title.className = 'plyr__title';
+            title.textContent = 'Power.of.Paanch.S01E01.Panchgiri.Ka.Power.WEB-DL.D';
+            document.querySelector('.plyr').appendChild(title);
+        }
+
+        // Call the functions to add the watermark and title
+        addWatermark();
+        addTitle();
+    </script>
+</body>
+</html>
+
